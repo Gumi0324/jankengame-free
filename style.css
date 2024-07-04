@@ -1,20 +1,10 @@
-function janken(playerChoice) {
-  const choices = ['グー', 'チョキ', 'パー'];
-  const emojis = {'グー': '👊', 'チョキ': '✌️', 'パー': '🖐️'};
-  const computerChoice = choices[Math.floor(Math.random() * choices.length)];
-
-  const result = determineWinner(playerChoice, emojis[computerChoice]);
-  document.getElementById('result').innerHTML = `あなた: ${playerChoice}<br>コンピュータ: ${emojis[computerChoice]}<br>${result}`;
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 20px;
 }
-
-function determineWinner(player, computer) {
-  if (player === computer) {
-    return '引き分けです！';
-  } else if ((player === '👊' && computer === '✌️') ||
-             (player === '✌️' && computer === '🖐️') ||
-             (player === '🖐️' && computer === '👊')) {
-    return 'あなたの勝ちです！';
-  } else {
-    return 'あなたの負けです。';
-  }
+#choices button {
+  font-size: 24px;
+  padding: 10px 20px;
+  margin: 10px;
 }
